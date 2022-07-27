@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 4,
+            "activePatchIndex": 11,
             "patches": [
                 {
                     "date": 1658927217726,
@@ -24,6 +24,34 @@
                 {
                     "date": 1658927999376,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,9 @@\n export class DataBindingComponent implements OnInit {\n \n   url: string = 'http://loiane.com';\n   cursoAngular: boolean = true;\n+  urlImagem: string = 'https://picsum.photos/200';\n \n   constructor() { }\n \n   ngOnInit(): void {\n"
+                },
+                {
+                    "date": 1658937841422,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,5 +23,14 @@\n   getCurtirCurso(): boolean {\n     return true;\n   }\n \n+  botaoClicado(): void {\n+    alert('Botão clicado!');\n+  }\n+\n+  onKeyUp(evento): void {\n+    console.log(evento);\n+    evento.\n+  }\n+\n }\n"
+                },
+                {
+                    "date": 1658937925268,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,10 +27,9 @@\n   botaoClicado(): void {\n     alert('Botão clicado!');\n   }\n \n-  onKeyUp(evento): void {\n-    console.log(evento);\n-    evento.\n+  onKeyUp(evento: KeyboardEvent): void {\n+    console.log(evento.target.value);\n   }\n \n }\n"
+                },
+                {
+                    "date": 1658937962994,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,8 +28,8 @@\n     alert('Botão clicado!');\n   }\n \n   onKeyUp(evento: KeyboardEvent): void {\n-    console.log(evento.target.value);\n+    console.log((<HTMLInputElement>evento.target).value);\n   }\n \n }\n"
+                },
+                {
+                    "date": 1658938033441,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,9 @@\n \n   url: string = 'http://loiane.com';\n   cursoAngular: boolean = true;\n   urlImagem: string = 'https://picsum.photos/200';\n+  valorAtual: string = '';\n \n   constructor() { }\n \n   ngOnInit(): void {\n@@ -28,8 +29,8 @@\n     alert('Botão clicado!');\n   }\n \n   onKeyUp(evento: KeyboardEvent): void {\n-    console.log((<HTMLInputElement>evento.target).value);\n+    this.valorAtual = (<HTMLInputElement>evento.target).value;\n   }\n \n }\n"
+                },
+                {
+                    "date": 1658938406549,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,8 +10,9 @@\n   url: string = 'http://loiane.com';\n   cursoAngular: boolean = true;\n   urlImagem: string = 'https://picsum.photos/200';\n   valorAtual: string = '';\n+  valorSalvo: string = '';\n \n   constructor() { }\n \n   ngOnInit(): void {\n@@ -32,5 +33,9 @@\n   onKeyUp(evento: KeyboardEvent): void {\n     this.valorAtual = (<HTMLInputElement>evento.target).value;\n   }\n \n+  salvarValor(valor:string): void {\n+    this.valorSalvo = valor;\n+  }\n+\n }\n"
+                },
+                {
+                    "date": 1658938954253,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,9 @@\n   cursoAngular: boolean = true;\n   urlImagem: string = 'https://picsum.photos/200';\n   valorAtual: string = '';\n   valorSalvo: string = '';\n+  isMouseOver: boolean = false;\n \n   constructor() { }\n \n   ngOnInit(): void {\n@@ -37,5 +38,9 @@\n   salvarValor(valor:string): void {\n     this.valorSalvo = valor;\n   }\n \n+  onMouseOverOut() : void {\n+\n+  }\n+\n }\n"
+                },
+                {
+                    "date": 1658939020991,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,8 +39,8 @@\n     this.valorSalvo = valor;\n   }\n \n   onMouseOverOut() : void {\n-\n+    this.isMouseOver = !this.isMouseOver;\n   }\n \n }\n"
                 }
             ],
             "date": 1658927217726,

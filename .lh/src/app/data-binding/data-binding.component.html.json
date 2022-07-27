@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 24,
+            "activePatchIndex": 36,
             "patches": [
                 {
                     "date": 1658927007314,
@@ -104,6 +104,54 @@
                 {
                     "date": 1658933379797,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,9 +38,9 @@\n \n       <div\n         class=\"alert alert-danger\"\n         role=\"alert\"\n-        [style.display=\"classe.value == 'alert-danger' ? 'block' : 'none'\"]>Esse texto somente aparece em caso de erro.\n+        [style.display]=\"classe.value == 'alert-danger' ? 'block' : 'none'\">Esse texto somente aparece em caso de erro.\n       </div>\n     </div>\n   </article>\n </section>\n"
+                },
+                {
+                    "date": 1658937571712,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,4 +43,15 @@\n       </div>\n     </div>\n   </article>\n </section>\n+\n+<section class=\"event-binding\">\n+  <article>\n+    <h3>Event binding</h3>\n+    <div>\n+      <button class=\"btn btn-primary\">\n+        Me clique!\n+      </button>\n+    </div>\n+  </article>\n+</section>\n"
+                },
+                {
+                    "date": 1658937847600,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,10 +48,15 @@\n <section class=\"event-binding\">\n   <article>\n     <h3>Event binding</h3>\n     <div>\n-      <button class=\"btn btn-primary\">\n+      <button\n+        (click)=\"botaoClicado()\"\n+        class=\"btn btn-primary\">\n         Me clique!\n       </button>\n+      <br><br>\n+\n+      <input type=\"text\" (keyup)=\"onKeyUp()\">\n     </div>\n   </article>\n </section>\n"
+                },
+                {
+                    "date": 1658938068367,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,8 +55,8 @@\n         Me clique!\n       </button>\n       <br><br>\n \n-      <input type=\"text\" (keyup)=\"onKeyUp()\">\n+      <input type=\"text\" (keyup)=\"onKeyUp(event)\">\n     </div>\n   </article>\n </section>\n"
+                },
+                {
+                    "date": 1658938102511,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,8 +55,8 @@\n         Me clique!\n       </button>\n       <br><br>\n \n-      <input type=\"text\" (keyup)=\"onKeyUp(event)\">\n+      <input type=\"text\" (keyup)=\"onKeyUp($event)\">\n     </div>\n   </article>\n </section>\n"
+                },
+                {
+                    "date": 1658938243283,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,8 +55,9 @@\n         Me clique!\n       </button>\n       <br><br>\n \n-      <input type=\"text\" (keyup)=\"onKeyUp($event)\">\n+      <input type=\"text\" (keyup)=\"onKeyUp($event)\"/>\n+      <p>Valor atual: {{ valorAtual }}</p>\n     </div>\n   </article>\n </section>\n"
+                },
+                {
+                    "date": 1658938519762,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,9 +55,15 @@\n         Me clique!\n       </button>\n       <br><br>\n \n-      <input type=\"text\" (keyup)=\"onKeyUp($event)\"/>\n+      <input\n+        type=\"text\"\n+        (keyup)=\"onKeyUp($event)\"\n+        (keyup.enter)=\"salvarValor($event.target.value)\"\n+      />\n+\n+      <p>Valor Salvo: {{ valorSalvo }}</p>\n       <p>Valor atual: {{ valorAtual }}</p>\n     </div>\n   </article>\n </section>\n"
+                },
+                {
+                    "date": 1658938663741,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -58,9 +58,11 @@\n \n       <input\n         type=\"text\"\n         (keyup)=\"onKeyUp($event)\"\n-        (keyup.enter)=\"salvarValor($event.target.value)\"\n+        (keyup.enter)=\"salvarValor(campoInput.value)\"\n+        (blur)=\"salvarValor(campoInput.value)\"\n+        #campoInput\n       />\n \n       <p>Valor Salvo: {{ valorSalvo }}</p>\n       <p>Valor atual: {{ valorAtual }}</p>\n"
+                },
+                {
+                    "date": 1658938854047,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -65,7 +65,15 @@\n       />\n \n       <p>Valor Salvo: {{ valorSalvo }}</p>\n       <p>Valor atual: {{ valorAtual }}</p>\n+\n+      <br>\n+      <span\n+        (mouseover)=\"\"\n+        (mouseout)=\"\"\n+      >\n+      Passe o mouse sobre mim\n+      </span>\n     </div>\n   </article>\n </section>\n"
+                },
+                {
+                    "date": 1658938962683,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,9 +68,9 @@\n       <p>Valor atual: {{ valorAtual }}</p>\n \n       <br>\n       <span\n-        (mouseover)=\"\"\n+        (mouseover)=\"onMouseOverOut()\"\n         (mouseout)=\"\"\n       >\n       Passe o mouse sobre mim\n       </span>\n"
+                },
+                {
+                    "date": 1658939041325,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,9 +69,9 @@\n \n       <br>\n       <span\n         (mouseover)=\"onMouseOverOut()\"\n-        (mouseout)=\"\"\n+        (mouseout)=\"onMouseOverOut()\"\n       >\n       Passe o mouse sobre mim\n       </span>\n     </div>\n"
+                },
+                {
+                    "date": 1658939211977,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,8 +70,9 @@\n       <br>\n       <span\n         (mouseover)=\"onMouseOverOut()\"\n         (mouseout)=\"onMouseOverOut()\"\n+        [class.highlight]=\"isMouseOver\"\n       >\n       Passe o mouse sobre mim\n       </span>\n     </div>\n"
+                },
+                {
+                    "date": 1658939432075,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -72,9 +72,9 @@\n         (mouseover)=\"onMouseOverOut()\"\n         (mouseout)=\"onMouseOverOut()\"\n         [class.highlight]=\"isMouseOver\"\n       >\n-      Passe o mouse sobre mim\n+        Passe o mouse sobre mim\n       </span>\n     </div>\n   </article>\n </section>\n"
                 }
             ],
             "date": 1658927007314,
