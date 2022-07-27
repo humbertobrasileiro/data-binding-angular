@@ -1,0 +1,26 @@
+{
+    "sourceFile": "angular.json",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1658931329038,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1658932142930,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,8 @@\n               \"node_modules/bootstrap/dist/css/bootstrap.css\",\n               \"src/styles.css\"\n             ],\n             \"scripts\": [\n-              \"node_modules/bootstrap/dist/js/bootstrap.js\"\n             ]\n           },\n           \"configurations\": {\n             \"production\": {\n"
+                },
+                {
+                    "date": 1658932161997,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,8 +26,9 @@\n               \"node_modules/bootstrap/dist/css/bootstrap.css\",\n               \"src/styles.css\"\n             ],\n             \"scripts\": [\n+              \"node_modules/bootstrap/dist/js/bootstrap.js\"\n             ]\n           },\n           \"configurations\": {\n             \"production\": {\n"
+                }
+            ],
+            "date": 1658931329038,
+            "name": "Commit-0",
+            "content": "{\n  \"$schema\": \"./node_modules/@angular/cli/lib/config/schema.json\",\n  \"version\": 1,\n  \"newProjectRoot\": \"projects\",\n  \"projects\": {\n    \"data-binding\": {\n      \"projectType\": \"application\",\n      \"schematics\": {},\n      \"root\": \"\",\n      \"sourceRoot\": \"src\",\n      \"prefix\": \"app\",\n      \"architect\": {\n        \"build\": {\n          \"builder\": \"@angular-devkit/build-angular:browser\",\n          \"options\": {\n            \"outputPath\": \"dist/data-binding\",\n            \"index\": \"src/index.html\",\n            \"main\": \"src/main.ts\",\n            \"polyfills\": \"src/polyfills.ts\",\n            \"tsConfig\": \"tsconfig.app.json\",\n            \"assets\": [\n              \"src/favicon.ico\",\n              \"src/assets\"\n            ],\n            \"styles\": [\n              \"node_modules/bootstrap/dist/css/bootstrap.css\",\n              \"src/styles.css\"\n            ],\n            \"scripts\": [\n              \"node_modules/bootstrap/dist/js/bootstrap.js\"\n            ]\n          },\n          \"configurations\": {\n            \"production\": {\n              \"budgets\": [\n                {\n                  \"type\": \"initial\",\n                  \"maximumWarning\": \"500kb\",\n                  \"maximumError\": \"1mb\"\n                },\n                {\n                  \"type\": \"anyComponentStyle\",\n                  \"maximumWarning\": \"2kb\",\n                  \"maximumError\": \"4kb\"\n                }\n              ],\n              \"fileReplacements\": [\n                {\n                  \"replace\": \"src/environments/environment.ts\",\n                  \"with\": \"src/environments/environment.prod.ts\"\n                }\n              ],\n              \"outputHashing\": \"all\"\n            },\n            \"development\": {\n              \"buildOptimizer\": false,\n              \"optimization\": false,\n              \"vendorChunk\": true,\n              \"extractLicenses\": false,\n              \"sourceMap\": true,\n              \"namedChunks\": true\n            }\n          },\n          \"defaultConfiguration\": \"production\"\n        },\n        \"serve\": {\n          \"builder\": \"@angular-devkit/build-angular:dev-server\",\n          \"configurations\": {\n            \"production\": {\n              \"browserTarget\": \"data-binding:build:production\"\n            },\n            \"development\": {\n              \"browserTarget\": \"data-binding:build:development\"\n            }\n          },\n          \"defaultConfiguration\": \"development\"\n        },\n        \"extract-i18n\": {\n          \"builder\": \"@angular-devkit/build-angular:extract-i18n\",\n          \"options\": {\n            \"browserTarget\": \"data-binding:build\"\n          }\n        },\n        \"test\": {\n          \"builder\": \"@angular-devkit/build-angular:karma\",\n          \"options\": {\n            \"main\": \"src/test.ts\",\n            \"polyfills\": \"src/polyfills.ts\",\n            \"tsConfig\": \"tsconfig.spec.json\",\n            \"karmaConfig\": \"karma.conf.js\",\n            \"assets\": [\n              \"src/favicon.ico\",\n              \"src/assets\"\n            ],\n            \"styles\": [\n              \"src/styles.css\"\n            ],\n            \"scripts\": []\n          }\n        }\n      }\n    }\n  },\n  \"cli\": {\n    \"analytics\": \"b72b6ad3-425e-4e56-9ce4-1ac8ed74b6c6\"\n  }\n}\n"
+        }
+    ]
+}

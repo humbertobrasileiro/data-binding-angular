@@ -1,0 +1,114 @@
+{
+    "sourceFile": "src/app/data-binding/data-binding.component.html",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 24,
+            "patches": [
+                {
+                    "date": 1658927007314,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1658927063557,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,7 @@\n <section class=\"´property-binding\">\n   <article>\n-\n+    <h3>\n+      Interpolation / Interpolação\n+    </h3>\n   </article>\n </section>\n"
+                },
+                {
+                    "date": 1658927203133,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,10 @@\n <section class=\"´property-binding\">\n   <article>\n     <h3>\n       Interpolation / Interpolação\n+      <p>\n+        String renderizada com interpolação: {{ url }}\n+      </p>\n     </h3>\n   </article>\n </section>\n"
+                },
+                {
+                    "date": 1658927331226,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n <section class=\"´property-binding\">\n   <article>\n     <h3>\n       Interpolation / Interpolação\n-      <p>\n-        String renderizada com interpolação: {{ url }}\n-      </p>\n+      <p>String renderizada com interpolação: {{ url }}</p>\n+      <p>Resultado de 1 + 1 é: {{ 1 + 1 }}</p>\n+      <p>resultado de 1 + 1 não é {{ 1 + 1 + getValor() }}</p>\n     </h3>\n   </article>\n </section>\n"
+                },
+                {
+                    "date": 1658927614749,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,8 @@\n       Interpolation / Interpolação\n       <p>String renderizada com interpolação: {{ url }}</p>\n       <p>Resultado de 1 + 1 é: {{ 1 + 1 }}</p>\n       <p>resultado de 1 + 1 não é {{ 1 + 1 + getValor() }}</p>\n+      <p>Curso de Angular e gosto do curso: {{ cursoAngular %% getCurtirCurso() }}</p>\n     </h3>\n   </article>\n </section>\n"
+                },
+                {
+                    "date": 1658927635408,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,8 @@\n       Interpolation / Interpolação\n       <p>String renderizada com interpolação: {{ url }}</p>\n       <p>Resultado de 1 + 1 é: {{ 1 + 1 }}</p>\n       <p>resultado de 1 + 1 não é {{ 1 + 1 + getValor() }}</p>\n-      <p>Curso de Angular e gosto do curso: {{ cursoAngular %% getCurtirCurso() }}</p>\n+      <p>Curso de Angular e gosto do curso: {{ cursoAngular && getCurtirCurso() }}</p>\n     </h3>\n   </article>\n </section>\n"
+                },
+                {
+                    "date": 1658928173444,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,16 @@\n <section class=\"´property-binding\">\n   <article>\n-    <h3>\n-      Interpolation / Interpolação\n-      <p>String renderizada com interpolação: {{ url }}</p>\n-      <p>Resultado de 1 + 1 é: {{ 1 + 1 }}</p>\n-      <p>resultado de 1 + 1 não é {{ 1 + 1 + getValor() }}</p>\n-      <p>Curso de Angular e gosto do curso: {{ cursoAngular && getCurtirCurso() }}</p>\n-    </h3>\n+\n+    <h3>Interpolation / Interpolação</h3>\n+    <p>String renderizada com interpolação: {{ url }}</p>\n+    <p>Resultado de 1 + 1 é: {{ 1 + 1 }}</p>\n+    <p>resultado de 1 + 1 não é {{ 1 + 1 + getValor() }}</p>\n+    <p>Curso de Angular e gosto do curso: {{ cursoAngular && getCurtirCurso() }}</p>\n+\n   </article>\n+\n+  <article>\n+    <h3>Property Binding</h3>\n+    <img src=\"{{ urlImagem }}\" alt=\"Imagem aleatório do picsum\">\n+  </article>\n </section>\n"
+                },
+                {
+                    "date": 1658928300541,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,6 +11,7 @@\n \n   <article>\n     <h3>Property Binding</h3>\n     <img src=\"{{ urlImagem }}\" alt=\"Imagem aleatório do picsum\">\n+    <img [src]=\"urlImagem\" alt=\"Imagem aleatório do picsum\">\n   </article>\n </section>\n"
+                },
+                {
+                    "date": 1658928621910,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,5 +13,10 @@\n     <h3>Property Binding</h3>\n     <img src=\"{{ urlImagem }}\" alt=\"Imagem aleatório do picsum\">\n     <img [src]=\"urlImagem\" alt=\"Imagem aleatório do picsum\">\n   </article>\n+\n+  <article>\n+    <h3>class e Style Binding</h3>\n+\n+  </article>\n </section>\n"
+                },
+                {
+                    "date": 1658931401064,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,7 +16,9 @@\n   </article>\n \n   <article>\n     <h3>class e Style Binding</h3>\n-\n+    <div class=\"alert alert-primary\" role=\"alert\">\n+      A simple primary alert—check it out!\n+    </div>\n   </article>\n </section>\n"
+                },
+                {
+                    "date": 1658931899211,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,15 @@\n   </article>\n \n   <article>\n     <h3>class e Style Binding</h3>\n-    <div class=\"alert alert-primary\" role=\"alert\">\n-      A simple primary alert—check it out!\n+    <div>\n+      Selecione uma classe:\n+      <select>\n+        <option value=\"alert-success\">Sucesso</option>\n+        <option value=\"alert-info\">Info</option>\n+        <option value=\"alert-warning\">Alerta</option>\n+        <option value=\"alert-danger\">Erro</option>\n+      </select>\n     </div>\n   </article>\n </section>\n"
+                },
+                {
+                    "date": 1658931977190,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n   <article>\n     <h3>class e Style Binding</h3>\n     <div>\n       Selecione uma classe:\n-      <select>\n+      <select #classe (change)=\"0\">\n         <option value=\"alert-success\">Sucesso</option>\n         <option value=\"alert-info\">Info</option>\n         <option value=\"alert-warning\">Alerta</option>\n         <option value=\"alert-danger\">Erro</option>\n"
+                },
+                {
+                    "date": 1658932093692,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,7 +24,21 @@\n         <option value=\"alert-info\">Info</option>\n         <option value=\"alert-warning\">Alerta</option>\n         <option value=\"alert-danger\">Erro</option>\n       </select>\n+      <br><br>\n+\n+      <div class=\"alert alert-success\" role=\"alert\">\n+        A simple success alert—check it out!\n+      </div>\n+      <div class=\"alert alert-info\" role=\"alert\">\n+        A simple info alert—check it out!\n+      </div>\n+      <div class=\"alert alert-warning\" role=\"alert\">\n+        A simple warning alert—check it out!\n+      </div>\n+      <div class=\"alert alert-danger\" role=\"alert\">\n+        A simple danger alert—check it out!\n+      </div>\n     </div>\n   </article>\n </section>\n"
+                },
+                {
+                    "date": 1658932526010,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,19 +26,11 @@\n         <option value=\"alert-danger\">Erro</option>\n       </select>\n       <br><br>\n \n-      <div class=\"alert alert-success\" role=\"alert\">\n-        A simple success alert—check it out!\n-      </div>\n-      <div class=\"alert alert-info\" role=\"alert\">\n-        A simple info alert—check it out!\n-      </div>\n-      <div class=\"alert alert-warning\" role=\"alert\">\n-        A simple warning alert—check it out!\n-      </div>\n-      <div class=\"alert alert-danger\" role=\"alert\">\n-        A simple danger alert—check it out!\n-      </div>\n+      <div class=\"alert\" role=\"alert\">Sucesso</div>\n+      <div class=\"alert\" role=\"alert\">Info</div>\n+      <div class=\"alert\" role=\"alert\">Alerta</div>\n+      <div class=\"alert\" role=\"alert\">Erro</div>\n     </div>\n   </article>\n </section>\n"
+                },
+                {
+                    "date": 1658932677570,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n         <option value=\"alert-danger\">Erro</option>\n       </select>\n       <br><br>\n \n-      <div class=\"alert\" role=\"alert\">Sucesso</div>\n+      <div class=\"alert\" role=\"alert\" [class.alert-success]=\"classe.value == 'alert-success'\">Sucesso</div>\n       <div class=\"alert\" role=\"alert\">Info</div>\n       <div class=\"alert\" role=\"alert\">Alerta</div>\n       <div class=\"alert\" role=\"alert\">Erro</div>\n     </div>\n"
+                },
+                {
+                    "date": 1658932713893,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n       </select>\n       <br><br>\n \n       <div class=\"alert\" role=\"alert\" [class.alert-success]=\"classe.value == 'alert-success'\">Sucesso</div>\n-      <div class=\"alert\" role=\"alert\">Info</div>\n+      <div class=\"alert\" role=\"alert\" [class.alert-info]=\"classe.value == 'alert-info'\">Info</div>\n       <div class=\"alert\" role=\"alert\">Alerta</div>\n       <div class=\"alert\" role=\"alert\">Erro</div>\n     </div>\n   </article>\n"
+                },
+                {
+                    "date": 1658932759197,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n       <br><br>\n \n       <div class=\"alert\" role=\"alert\" [class.alert-success]=\"classe.value == 'alert-success'\">Sucesso</div>\n       <div class=\"alert\" role=\"alert\" [class.alert-info]=\"classe.value == 'alert-info'\">Info</div>\n-      <div class=\"alert\" role=\"alert\">Alerta</div>\n-      <div class=\"alert\" role=\"alert\">Erro</div>\n+      <div class=\"alert\" role=\"alert\" [class.alert-warning]=\"classe.value == 'alert-warning'\">Alerta</div>\n+      <div class=\"alert\" role=\"alert\" [class.alert-danger]=\"classe.value == 'alert-danger'\">Erro</div>\n     </div>\n   </article>\n </section>\n"
+                },
+                {
+                    "date": 1658932897569,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,8 +26,12 @@\n         <option value=\"alert-danger\">Erro</option>\n       </select>\n       <br><br>\n \n+      <div class=\"alert\">\n+        Texto colorido conforme valor do combobox.\n+      </div>\n+\n       <div class=\"alert\" role=\"alert\" [class.alert-success]=\"classe.value == 'alert-success'\">Sucesso</div>\n       <div class=\"alert\" role=\"alert\" [class.alert-info]=\"classe.value == 'alert-info'\">Info</div>\n       <div class=\"alert\" role=\"alert\" [class.alert-warning]=\"classe.value == 'alert-warning'\">Alerta</div>\n       <div class=\"alert\" role=\"alert\" [class.alert-danger]=\"classe.value == 'alert-danger'\">Erro</div>\n"
+                },
+                {
+                    "date": 1658932928841,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n         <option value=\"alert-danger\">Erro</option>\n       </select>\n       <br><br>\n \n-      <div class=\"alert\">\n+      <div class=\"alert {{ classe.value }}\">\n         Texto colorido conforme valor do combobox.\n       </div>\n \n       <div class=\"alert\" role=\"alert\" [class.alert-success]=\"classe.value == 'alert-success'\">Sucesso</div>\n"
+                },
+                {
+                    "date": 1658932970681,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n         <option value=\"alert-danger\">Erro</option>\n       </select>\n       <br><br>\n \n-      <div class=\"alert {{ classe.value }}\">\n+      <div class=\"alert {{ classe.value }}\" role=\"alert\">\n         Texto colorido conforme valor do combobox.\n       </div>\n \n       <div class=\"alert\" role=\"alert\" [class.alert-success]=\"classe.value == 'alert-success'\">Sucesso</div>\n"
+                },
+                {
+                    "date": 1658933125206,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,7 +34,9 @@\n       <div class=\"alert\" role=\"alert\" [class.alert-success]=\"classe.value == 'alert-success'\">Sucesso</div>\n       <div class=\"alert\" role=\"alert\" [class.alert-info]=\"classe.value == 'alert-info'\">Info</div>\n       <div class=\"alert\" role=\"alert\" [class.alert-warning]=\"classe.value == 'alert-warning'\">Alerta</div>\n       <div class=\"alert\" role=\"alert\" [class.alert-danger]=\"classe.value == 'alert-danger'\">Erro</div>\n+\n+      <div class=\"alert alert-danger\" role=\"alert\">Esse texto somente aparece em caso de erro.</div>\n     </div>\n   </article>\n </section>\n"
+                },
+                {
+                    "date": 1658933179413,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,8 +35,8 @@\n       <div class=\"alert\" role=\"alert\" [class.alert-info]=\"classe.value == 'alert-info'\">Info</div>\n       <div class=\"alert\" role=\"alert\" [class.alert-warning]=\"classe.value == 'alert-warning'\">Alerta</div>\n       <div class=\"alert\" role=\"alert\" [class.alert-danger]=\"classe.value == 'alert-danger'\">Erro</div>\n \n-      <div class=\"alert alert-danger\" role=\"alert\">Esse texto somente aparece em caso de erro.</div>\n+      <div class=\"alert alert-danger\" role=\"alert\" style=\"display:none\">Esse texto somente aparece em caso de erro.</div>\n     </div>\n   </article>\n </section>\n"
+                },
+                {
+                    "date": 1658933203695,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,8 +35,8 @@\n       <div class=\"alert\" role=\"alert\" [class.alert-info]=\"classe.value == 'alert-info'\">Info</div>\n       <div class=\"alert\" role=\"alert\" [class.alert-warning]=\"classe.value == 'alert-warning'\">Alerta</div>\n       <div class=\"alert\" role=\"alert\" [class.alert-danger]=\"classe.value == 'alert-danger'\">Erro</div>\n \n-      <div class=\"alert alert-danger\" role=\"alert\" style=\"display:none\">Esse texto somente aparece em caso de erro.</div>\n+      <div class=\"alert alert-danger\" role=\"alert\" style=\"display:block\">Esse texto somente aparece em caso de erro.</div>\n     </div>\n   </article>\n </section>\n"
+                },
+                {
+                    "date": 1658933335167,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,8 +35,12 @@\n       <div class=\"alert\" role=\"alert\" [class.alert-info]=\"classe.value == 'alert-info'\">Info</div>\n       <div class=\"alert\" role=\"alert\" [class.alert-warning]=\"classe.value == 'alert-warning'\">Alerta</div>\n       <div class=\"alert\" role=\"alert\" [class.alert-danger]=\"classe.value == 'alert-danger'\">Erro</div>\n \n-      <div class=\"alert alert-danger\" role=\"alert\" style=\"display:block\">Esse texto somente aparece em caso de erro.</div>\n+      <div\n+        class=\"alert alert-danger\"\n+        role=\"alert\"\n+        [style.display=\"classe.value == 'alert-danger' ? 'block' : 'none'\"]>Esse texto somente aparece em caso de erro.\n+      </div>\n     </div>\n   </article>\n </section>\n"
+                },
+                {
+                    "date": 1658933379797,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,9 +38,9 @@\n \n       <div\n         class=\"alert alert-danger\"\n         role=\"alert\"\n-        [style.display=\"classe.value == 'alert-danger' ? 'block' : 'none'\"]>Esse texto somente aparece em caso de erro.\n+        [style.display]=\"classe.value == 'alert-danger' ? 'block' : 'none'\">Esse texto somente aparece em caso de erro.\n       </div>\n     </div>\n   </article>\n </section>\n"
+                }
+            ],
+            "date": 1658927007314,
+            "name": "Commit-0",
+            "content": "<section class=\"´property-binding\">\n  <article>\n\n  </article>\n</section>\n"
+        }
+    ]
+}
