@@ -1,0 +1,26 @@
+{
+    "sourceFile": "src/app/input-property/input-property.component.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1658946888998,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1658947160405,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,15 @@\n-import { Component, OnInit } from '@angular/core';\n+import { Component, Input, OnInit } from '@angular/core';\n \n @Component({\n   selector: 'app-curso',\n   templateUrl: './input-property.component.html',\n   styleUrls: ['./input-property.component.css']\n })\n export class InputPropertyComponent implements OnInit {\n \n+  @Input() nome: string = '';\n+\n   constructor() { }\n \n   ngOnInit(): void {\n   }\n"
+                },
+                {
+                    "date": 1658947227462,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n   styleUrls: ['./input-property.component.css']\n })\n export class InputPropertyComponent implements OnInit {\n \n-  @Input() nome: string = '';\n+  @Input('nome') nomeCurso: string = '';\n \n   constructor() { }\n \n   ngOnInit(): void {\n"
+                }
+            ],
+            "date": 1658946888998,
+            "name": "Commit-0",
+            "content": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-curso',\n  templateUrl: './input-property.component.html',\n  styleUrls: ['./input-property.component.css']\n})\nexport class InputPropertyComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n"
+        }
+    ]
+}

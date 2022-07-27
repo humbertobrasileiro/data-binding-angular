@@ -1,0 +1,38 @@
+{
+    "sourceFile": "src/app/meu-form/meu-form.module.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1658945328638,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1658945693765,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,13 @@\n import { NgModule } from '@angular/core';\n import { CommonModule } from '@angular/common';\n import { FormsModule } from '@angular/forms';\n+import { MeuFormComponent } from './meu-form.component';\n \n \n \n @NgModule({\n-  declarations: [],\n+  declarations: [MeuFormComponent],\n   imports: [\n     CommonModule,\n     FormsModule\n   ]\n"
+                },
+                {
+                    "date": 1658945891485,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,7 +9,8 @@\n   declarations: [MeuFormComponent],\n   imports: [\n     CommonModule,\n     FormsModule\n-  ]\n+  ],\n+  exports: [MeuFormComponent]\n })\n export class MeuFormModule { }\n"
+                },
+                {
+                    "date": 1658946015533,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,10 +2,8 @@\n import { CommonModule } from '@angular/common';\n import { FormsModule } from '@angular/forms';\n import { MeuFormComponent } from './meu-form.component';\n \n-\n-\n @NgModule({\n   declarations: [MeuFormComponent],\n   imports: [\n     CommonModule,\n"
+                },
+                {
+                    "date": 1658946151046,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,10 +5,9 @@\n \n @NgModule({\n   declarations: [MeuFormComponent],\n   imports: [\n-    CommonModule,\n-    FormsModule\n+    CommonModule\n   ],\n   exports: [MeuFormComponent]\n })\n export class MeuFormModule { }\n"
+                },
+                {
+                    "date": 1658946469122,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,10 @@\n \n @NgModule({\n   declarations: [MeuFormComponent],\n   imports: [\n-    CommonModule\n+    CommonModule,\n+    FormsModule\n   ],\n   exports: [MeuFormComponent]\n })\n export class MeuFormModule { }\n"
+                }
+            ],
+            "date": 1658945328638,
+            "name": "Commit-0",
+            "content": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { FormsModule } from '@angular/forms';\n\n\n\n@NgModule({\n  declarations: [],\n  imports: [\n    CommonModule,\n    FormsModule\n  ]\n})\nexport class MeuFormModule { }\n"
+        }
+    ]
+}

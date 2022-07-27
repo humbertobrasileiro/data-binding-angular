@@ -1,0 +1,42 @@
+{
+    "sourceFile": "src/app/app.module.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 6,
+            "patches": [
+                {
+                    "date": 1658941579050,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1658941773977,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,14 +4,16 @@\n import { AppRoutingModule } from './app-routing.module';\n import { AppComponent } from './app.component';\n import { DataBindingComponent } from './data-binding/data-binding.component';\n import { FormsModule } from '@angular/forms';\n+import { ReactiveFormsModule } from '@angular/forms';\n \n @NgModule({\n   declarations: [\n     AppComponent,\n     DataBindingComponent,\n-    FormsModule\n+    FormsModule,\n+    ReactiveFormsModule\n   ],\n   imports: [\n     BrowserModule,\n     AppRoutingModule\n"
+                },
+                {
+                    "date": 1658941836671,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,24 @@\n+import { NgModule } from '@angular/core';\n+import { BrowserModule } from '@angular/platform-browser';\n+\n+import { AppRoutingModule } from './app-routing.module';\n+import { AppComponent } from './app.component';\n+import { DataBindingComponent } from './data-binding/data-binding.component';\n+import { FormsModule } from '@angular/forms';\n+import { ReactiveFormsModule } from '@angular/forms';\n+\n+@NgModule({\n+  declarations: [\n+    AppComponent,\n+    DataBindingComponent\n+  ],\n+  imports: [\n+    BrowserModule,\n+    AppRoutingModule,\n+    FormsModule,\n+    ReactiveFormsModule\n+  ],\n+  providers: [],\n+  bootstrap: [AppComponent]\n+})\n+export class AppModule { }\n"
+                },
+                {
+                    "date": 1658945236031,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,44 +5,26 @@\n import { AppComponent } from './app.component';\n import { DataBindingComponent } from './data-binding/data-binding.component';\n import { FormsModule } from '@angular/forms';\n import { ReactiveFormsModule } from '@angular/forms';\n+import { InputPropertyComponent } from './input-property/input-property.component';\n+import { MeuFormComponent } from './meu-form/meu-form.component';\n+import { MeuFormModule } from './meu-form/meu-form.module';\n \n @NgModule({\n   declarations: [\n     AppComponent,\n-    DataBindingComponent\n+    DataBindingComponent,\n+    InputPropertyComponent,\n+    MeuFormComponent\n   ],\n   imports: [\n     BrowserModule,\n     AppRoutingModule,\n     FormsModule,\n-    ReactiveFormsModule\n+    ReactiveFormsModule,\n+    MeuFormModule\n   ],\n   providers: [],\n   bootstrap: [AppComponent]\n })\n export class AppModule { }\n-import { NgModule } from '@angular/core';\n-import { BrowserModule } from '@angular/platform-browser';\n-\n-import { AppRoutingModule } from './app-routing.module';\n-import { AppComponent } from './app.component';\n-import { DataBindingComponent } from './data-binding/data-binding.component';\n-import { FormsModule } from '@angular/forms';\n-import { ReactiveFormsModule } from '@angular/forms';\n-\n-@NgModule({\n-  declarations: [\n-    AppComponent,\n-    DataBindingComponent,\n-    FormsModule,\n-    ReactiveFormsModule\n-  ],\n-  imports: [\n-    BrowserModule,\n-    AppRoutingModule\n-  ],\n-  providers: [],\n-  bootstrap: [AppComponent]\n-})\n-export class AppModule { }\n"
+                },
+                {
+                    "date": 1658945946487,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,8 @@\n import { FormsModule } from '@angular/forms';\n import { ReactiveFormsModule } from '@angular/forms';\n import { InputPropertyComponent } from './input-property/input-property.component';\n import { MeuFormComponent } from './meu-form/meu-form.component';\n-import { MeuFormModule } from './meu-form/meu-form.module';\n \n @NgModule({\n   declarations: [\n     AppComponent,\n@@ -20,10 +19,9 @@\n   imports: [\n     BrowserModule,\n     AppRoutingModule,\n     FormsModule,\n-    ReactiveFormsModule,\n-    MeuFormModule\n+    ReactiveFormsModule\n   ],\n   providers: [],\n   bootstrap: [AppComponent]\n })\n"
+                },
+                {
+                    "date": 1658946213442,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,16 +6,14 @@\n import { DataBindingComponent } from './data-binding/data-binding.component';\n import { FormsModule } from '@angular/forms';\n import { ReactiveFormsModule } from '@angular/forms';\n import { InputPropertyComponent } from './input-property/input-property.component';\n-import { MeuFormComponent } from './meu-form/meu-form.component';\n \n @NgModule({\n   declarations: [\n     AppComponent,\n     DataBindingComponent,\n-    InputPropertyComponent,\n-    MeuFormComponent\n+    InputPropertyComponent\n   ],\n   imports: [\n     BrowserModule,\n     AppRoutingModule,\n"
+                },
+                {
+                    "date": 1658946374653,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,9 @@\n import { DataBindingComponent } from './data-binding/data-binding.component';\n import { FormsModule } from '@angular/forms';\n import { ReactiveFormsModule } from '@angular/forms';\n import { InputPropertyComponent } from './input-property/input-property.component';\n+import { MeuFormModule } from './meu-form/meu-form.module';\n \n @NgModule({\n   declarations: [\n     AppComponent,\n@@ -17,9 +18,10 @@\n   imports: [\n     BrowserModule,\n     AppRoutingModule,\n     FormsModule,\n-    ReactiveFormsModule\n+    ReactiveFormsModule,\n+    MeuFormModule\n   ],\n   providers: [],\n   bootstrap: [AppComponent]\n })\n"
+                }
+            ],
+            "date": 1658941579050,
+            "name": "Commit-0",
+            "content": "import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\n\nimport { AppRoutingModule } from './app-routing.module';\nimport { AppComponent } from './app.component';\nimport { DataBindingComponent } from './data-binding/data-binding.component';\nimport { FormsModule } from '@angular/forms';\n\n@NgModule({\n  declarations: [\n    AppComponent,\n    DataBindingComponent,\n    FormsModule\n  ],\n  imports: [\n    BrowserModule,\n    AppRoutingModule\n  ],\n  providers: [],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }\n"
+        }
+    ]
+}

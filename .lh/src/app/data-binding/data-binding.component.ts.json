@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 11,
+            "activePatchIndex": 15,
             "patches": [
                 {
                     "date": 1658927217726,
@@ -52,6 +52,22 @@
                 {
                     "date": 1658939020991,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,8 +39,8 @@\n     this.valorSalvo = valor;\n   }\n \n   onMouseOverOut() : void {\n-\n+    this.isMouseOver = !this.isMouseOver;\n   }\n \n }\n"
+                },
+                {
+                    "date": 1658939837846,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,8 +12,9 @@\n   urlImagem: string = 'https://picsum.photos/200';\n   valorAtual: string = '';\n   valorSalvo: string = '';\n   isMouseOver: boolean = false;\n+  nome: string = 'abc';\n \n   constructor() { }\n \n   ngOnInit(): void {\n"
+                },
+                {
+                    "date": 1658944154819,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,8 +14,13 @@\n   valorSalvo: string = '';\n   isMouseOver: boolean = false;\n   nome: string = 'abc';\n \n+  pessoa: any = {\n+    nome: 'Humberto',\n+    idade: 54\n+  }\n+\n   constructor() { }\n \n   ngOnInit(): void {\n   }\n"
+                },
+                {
+                    "date": 1658946567539,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,15 +12,9 @@\n   urlImagem: string = 'https://picsum.photos/200';\n   valorAtual: string = '';\n   valorSalvo: string = '';\n   isMouseOver: boolean = false;\n-  nome: string = 'abc';\n \n-  pessoa: any = {\n-    nome: 'Humberto',\n-    idade: 54\n-  }\n-\n   constructor() { }\n \n   ngOnInit(): void {\n   }\n"
+                },
+                {
+                    "date": 1658947007195,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,8 +12,9 @@\n   urlImagem: string = 'https://picsum.photos/200';\n   valorAtual: string = '';\n   valorSalvo: string = '';\n   isMouseOver: boolean = false;\n+  nomeDoCurso: string = 'Angular';\n \n   constructor() { }\n \n   ngOnInit(): void {\n"
                 }
             ],
             "date": 1658927217726,

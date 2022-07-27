@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 36,
+            "activePatchIndex": 58,
             "patches": [
                 {
                     "date": 1658927007314,
@@ -152,6 +152,94 @@
                 {
                     "date": 1658939432075,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -72,9 +72,9 @@\n         (mouseover)=\"onMouseOverOut()\"\n         (mouseout)=\"onMouseOverOut()\"\n         [class.highlight]=\"isMouseOver\"\n       >\n-      Passe o mouse sobre mim\n+        Passe o mouse sobre mim\n       </span>\n     </div>\n   </article>\n </section>\n"
+                },
+                {
+                    "date": 1658939673936,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -77,4 +77,13 @@\n       </span>\n     </div>\n   </article>\n </section>\n+\n+<section class=\"two-way-binding\">\n+  <article>\n+    <h3>Two-way data binding</h3>\n+    <div>\n+\n+    </div>\n+  </article>\n+</section>\n"
+                },
+                {
+                    "date": 1658939721342,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n       </div>\n     </div>\n   </article>\n </section>\n-\n+<hr>\n <section class=\"event-binding\">\n   <article>\n     <h3>Event binding</h3>\n     <div>\n@@ -77,9 +77,9 @@\n       </span>\n     </div>\n   </article>\n </section>\n-\n+<hr>\n <section class=\"two-way-binding\">\n   <article>\n     <h3>Two-way data binding</h3>\n     <div>\n"
+                },
+                {
+                    "date": 1658939820162,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -82,8 +82,8 @@\n <section class=\"two-way-binding\">\n   <article>\n     <h3>Two-way data binding</h3>\n     <div>\n-\n+      <input type=\"text\" [value]=\"nome\">\n     </div>\n   </article>\n </section>\n"
+                },
+                {
+                    "date": 1658939928108,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -82,8 +82,13 @@\n <section class=\"two-way-binding\">\n   <article>\n     <h3>Two-way data binding</h3>\n     <div>\n-      <input type=\"text\" [value]=\"nome\">\n+      <input\n+        type=\"text\"\n+        [value]=\"nome\"\n+        (input)=\"nome = $event.target.value\"\n+      >\n+      <p>Você digitou: {{ nome }}</p>\n     </div>\n   </article>\n </section>\n"
+                },
+                {
+                    "date": 1658939971441,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -83,11 +83,12 @@\n   <article>\n     <h3>Two-way data binding</h3>\n     <div>\n       <input\n+        #nome\n         type=\"text\"\n         [value]=\"nome\"\n-        (input)=\"nome = $event.target.value\"\n+        (input)=\"nome = nome.value\"\n       >\n       <p>Você digitou: {{ nome }}</p>\n     </div>\n   </article>\n"
+                },
+                {
+                    "date": 1658939988091,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -83,12 +83,12 @@\n   <article>\n     <h3>Two-way data binding</h3>\n     <div>\n       <input\n-        #nome\n+        #nomeInput\n         type=\"text\"\n         [value]=\"nome\"\n-        (input)=\"nome = nome.value\"\n+        (input)=\"nome = nomeInput.value\"\n       >\n       <p>Você digitou: {{ nome }}</p>\n     </div>\n   </article>\n"
+                },
+                {
+                    "date": 1658940136204,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -85,10 +85,10 @@\n     <div>\n       <input\n         #nomeInput\n         type=\"text\"\n-        [value]=\"nome\"\n-        (input)=\"nome = nomeInput.value\"\n+        [ngModel]=\"nome\"\n+        [ngModelChange]=\"nome = nomeInput.value\"\n       >\n       <p>Você digitou: {{ nome }}</p>\n     </div>\n   </article>\n"
+                },
+                {
+                    "date": 1658940219603,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -83,12 +83,10 @@\n   <article>\n     <h3>Two-way data binding</h3>\n     <div>\n       <input\n-        #nomeInput\n         type=\"text\"\n-        [ngModel]=\"nome\"\n-        [ngModelChange]=\"nome = nomeInput.value\"\n+        [(ngModel)]=\"nome\"\n       >\n       <p>Você digitou: {{ nome }}</p>\n     </div>\n   </article>\n"
+                },
+                {
+                    "date": 1658940285789,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -82,12 +82,9 @@\n <section class=\"two-way-binding\">\n   <article>\n     <h3>Two-way data binding</h3>\n     <div>\n-      <input\n-        type=\"text\"\n-        [(ngModel)]=\"nome\"\n-      >\n+      <input type=\"text\" [(ngModel)]=\"nome\">\n       <p>Você digitou: {{ nome }}</p>\n     </div>\n   </article>\n </section>\n"
+                },
+                {
+                    "date": 1658940337090,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -82,9 +82,9 @@\n <section class=\"two-way-binding\">\n   <article>\n     <h3>Two-way data binding</h3>\n     <div>\n-      <input type=\"text\" [(ngModel)]=\"nome\">\n+      <input type=\"text\" ngModel=\"nome\">\n       <p>Você digitou: {{ nome }}</p>\n     </div>\n   </article>\n </section>\n"
+                },
+                {
+                    "date": 1658940616183,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -82,9 +82,9 @@\n <section class=\"two-way-binding\">\n   <article>\n     <h3>Two-way data binding</h3>\n     <div>\n-      <input type=\"text\" ngModel=\"nome\">\n+      <input type=\"text\" [value]=\"nome\">\n       <p>Você digitou: {{ nome }}</p>\n     </div>\n   </article>\n </section>\n"
+                },
+                {
+                    "date": 1658940674143,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -82,9 +82,9 @@\n <section class=\"two-way-binding\">\n   <article>\n     <h3>Two-way data binding</h3>\n     <div>\n-      <input type=\"text\" [value]=\"nome\">\n+      <input type=\"text\" (value)=\"nome\">\n       <p>Você digitou: {{ nome }}</p>\n     </div>\n   </article>\n </section>\n"
+                },
+                {
+                    "date": 1658941041353,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -82,9 +82,9 @@\n <section class=\"two-way-binding\">\n   <article>\n     <h3>Two-way data binding</h3>\n     <div>\n-      <input type=\"text\" (value)=\"nome\">\n+      <input type=\"text\" [(value)]=\"nome\">\n       <p>Você digitou: {{ nome }}</p>\n     </div>\n   </article>\n </section>\n"
+                },
+                {
+                    "date": 1658941109423,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -82,9 +82,9 @@\n <section class=\"two-way-binding\">\n   <article>\n     <h3>Two-way data binding</h3>\n     <div>\n-      <input type=\"text\" [(value)]=\"nome\">\n+      <input type=\"text\" [(ngModel)]=\"nome\">\n       <p>Você digitou: {{ nome }}</p>\n     </div>\n   </article>\n </section>\n"
+                },
+                {
+                    "date": 1658941143387,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -82,9 +82,9 @@\n <section class=\"two-way-binding\">\n   <article>\n     <h3>Two-way data binding</h3>\n     <div>\n-      <input type=\"text\" [(ngModel)]=\"nome\">\n+      <input #nomeAtual type=\"text\" [(value)]=\"nomeAtual\">\n       <p>Você digitou: {{ nome }}</p>\n     </div>\n   </article>\n </section>\n"
+                },
+                {
+                    "date": 1658941398468,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -82,9 +82,9 @@\n <section class=\"two-way-binding\">\n   <article>\n     <h3>Two-way data binding</h3>\n     <div>\n-      <input #nomeAtual type=\"text\" [(value)]=\"nomeAtual\">\n+      <input type=\"text\" [(ngModel)]=\"nome\">\n       <p>Você digitou: {{ nome }}</p>\n     </div>\n   </article>\n </section>\n"
+                },
+                {
+                    "date": 1658944303490,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -85,6 +85,10 @@\n     <div>\n       <input type=\"text\" [(ngModel)]=\"nome\">\n       <p>Você digitou: {{ nome }}</p>\n     </div>\n+    <div>\n+      <input type=\"text\" [(ngModel)]=\"pessoa.nome\">\n+      <input type=\"number\" [(ngModel)]=\"pessoa.idade\">\n+    </div>\n   </article>\n </section>\n"
+                },
+                {
+                    "date": 1658944413530,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -86,8 +86,9 @@\n       <input type=\"text\" [(ngModel)]=\"nome\">\n       <p>Você digitou: {{ nome }}</p>\n     </div>\n     <div>\n+      <p>Meu nome é {{ pessoa.nome }} e tenho {{ pessoa.idade }} anos.</p>\n       <input type=\"text\" [(ngModel)]=\"pessoa.nome\">\n       <input type=\"number\" [(ngModel)]=\"pessoa.idade\">\n     </div>\n   </article>\n"
+                },
+                {
+                    "date": 1658945010303,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -78,18 +78,4 @@\n     </div>\n   </article>\n </section>\n <hr>\n-<section class=\"two-way-binding\">\n-  <article>\n-    <h3>Two-way data binding</h3>\n-    <div>\n-      <input type=\"text\" [(ngModel)]=\"nome\">\n-      <p>Você digitou: {{ nome }}</p>\n-    </div>\n-    <div>\n-      <p>Meu nome é {{ pessoa.nome }} e tenho {{ pessoa.idade }} anos.</p>\n-      <input type=\"text\" [(ngModel)]=\"pessoa.nome\">\n-      <input type=\"number\" [(ngModel)]=\"pessoa.idade\">\n-    </div>\n-  </article>\n-</section>\n"
+                },
+                {
+                    "date": 1658945051675,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -78,4 +78,5 @@\n     </div>\n   </article>\n </section>\n <hr>\n+<app-meu-form></app-meu-form>\n"
+                },
+                {
+                    "date": 1658946871916,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -79,4 +79,12 @@\n   </article>\n </section>\n <hr>\n <app-meu-form></app-meu-form>\n+<hr>\n+<section class=\"input-output-properties\">\n+  <article>\n+    <h3>Input/Output Properties</h3>\n+\n+    <app-curso></app-curso>\n+  </article>\n+</section>\n"
+                },
+                {
+                    "date": 1658947123654,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -84,7 +84,7 @@\n <section class=\"input-output-properties\">\n   <article>\n     <h3>Input/Output Properties</h3>\n \n-    <app-curso></app-curso>\n+    <app-curso [nome]=\"nomeDoCurso\"></app-curso>\n   </article>\n </section>\n"
                 }
             ],
             "date": 1658927007314,
