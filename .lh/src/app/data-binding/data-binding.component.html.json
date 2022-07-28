@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 58,
+            "activePatchIndex": 59,
             "patches": [
                 {
                     "date": 1658927007314,
@@ -240,6 +240,10 @@
                 {
                     "date": 1658947123654,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -84,7 +84,7 @@\n <section class=\"input-output-properties\">\n   <article>\n     <h3>Input/Output Properties</h3>\n \n-    <app-curso></app-curso>\n+    <app-curso [nome]=\"nomeDoCurso\"></app-curso>\n   </article>\n </section>\n"
+                },
+                {
+                    "date": 1658950975587,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -85,6 +85,8 @@\n   <article>\n     <h3>Input/Output Properties</h3>\n \n     <app-curso [nome]=\"nomeDoCurso\"></app-curso>\n+\n+    <contador></contador>\n   </article>\n </section>\n"
                 }
             ],
             "date": 1658927007314,
